@@ -25,7 +25,7 @@ SECRET_KEY = ')4#b##ei#k^%yr+ewsxkrp6s@-j*$wm6d(tua7r@+dgwqf8_1%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['crvik.pythonanywhere.com']
 
 SITE_ID = 1
 
@@ -35,10 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.sites',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'blog',
 ]
 
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'blogengine.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'blogengine.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+ 'default': {
+     'ENGINE': 'django.db.backends.sqlite3',
+     'NAME': '/home/crvik/test_project/blogengine/db.sqlite3',
+ }
+}
 
 
 # Password validation
@@ -120,9 +120,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/admin'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = '/home/crvik/.virtualenvs/myenv/lib/python3.6/site-packages/django/contrib/admin/static/admin'
 
-LOGIN_REDIRECT_URL = '/admin/login'
+
+LOGIN_URL = '/account/login/'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/admin/login'
 
 EMAIL_HOST = 'smtp.gmail.com'
@@ -131,9 +135,3 @@ EMAIL_HOST_USER = 'qwertyranter@gmail.com'
 EMAIL_HOST_PASSWORD = 'glvxagxepweaurlq'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-
-
-try:
-    from .local_settings import *
-except ImportError:
-    from .prod_settings import *
