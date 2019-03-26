@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="dbBlog">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="blog">
+      <ObjectId>24576</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>13329</ObjectId>
+    </database>
+    <database id="4" parent="1" name="chat">
+      <ObjectId>16394</ObjectId>
+    </database>
+    <role id="5" parent="1" name="crvik">
+      <ObjectId>16393</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="pg_execute_server_program">
+      <ObjectId>4571</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_read_server_files">
+      <ObjectId>4569</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="12" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="13" parent="1" name="pg_write_server_files">
+      <ObjectId>4570</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="14" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="15" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="16" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="18" parent="2" name="pg_temp_1">
+      <ObjectId>11804</ObjectId>
+    </schema>
+    <schema id="19" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11805</ObjectId>
+    </schema>
+    <schema id="20" parent="2" name="information_schema">
+      <ObjectId>13033</ObjectId>
+    </schema>
+    <sequence id="21" parent="15" name="auth_group_id_seq">
+      <ObjectId>24606</ObjectId>
+      <StateNumber>691</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="22" parent="15" name="auth_group_permissions_id_seq">
+      <ObjectId>24616</ObjectId>
+      <StateNumber>691</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="23" parent="15" name="auth_permission_id_seq">
+      <ObjectId>24598</ObjectId>
+      <StateNumber>691</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="24" parent="15" name="auth_user_groups_id_seq">
+      <ObjectId>24634</ObjectId>
+      <StateNumber>691</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="25" parent="15" name="auth_user_id_seq">
+      <ObjectId>24624</ObjectId>
+      <StateNumber>691</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="26" parent="15" name="auth_user_user_permissions_id_seq">
+      <ObjectId>24642</ObjectId>
+      <StateNumber>691</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="27" parent="15" name="blog_blog_id_seq">
+      <ObjectId>24742</ObjectId>
+      <StateNumber>732</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="28" parent="15" name="blog_post_id_seq">
+      <ObjectId>24756</ObjectId>
+      <StateNumber>748</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="29" parent="15" name="blog_profile_id_seq">
+      <ObjectId>24777</ObjectId>
+      <StateNumber>756</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="30" parent="15" name="blog_profile_is_read_post_id_seq">
+      <ObjectId>24787</ObjectId>
+      <StateNumber>756</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="31" parent="15" name="blog_profile_subscription_blogs_id_seq">
+      <ObjectId>24795</ObjectId>
+      <StateNumber>756</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="32" parent="15" name="django_admin_log_id_seq">
+      <ObjectId>24702</ObjectId>
+      <StateNumber>693</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="33" parent="15" name="django_content_type_id_seq">
+      <ObjectId>24588</ObjectId>
+      <StateNumber>689</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="34" parent="15" name="django_migrations_id_seq">
+      <ObjectId>24577</ObjectId>
+      <StateNumber>688</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="35" parent="15" name="django_site_id_seq">
+      <ObjectId>24846</ObjectId>
+      <StateNumber>1284</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="36" parent="15" name="auth_group">
+      <ObjectId>24608</ObjectId>
+      <StateNumber>691</StateNumber>
+    </table>
+    <table id="37" parent="15" name="auth_group_permissions">
+      <ObjectId>24618</ObjectId>
+      <StateNumber>691</StateNumber>
+    </table>
+    <table id="38" parent="15" name="auth_permission">
+      <ObjectId>24600</ObjectId>
+      <StateNumber>691</StateNumber>
+    </table>
+    <table id="39" parent="15" name="auth_user">
+      <ObjectId>24626</ObjectId>
+      <StateNumber>708</StateNumber>
+    </table>
+    <table id="40" parent="15" name="auth_user_groups">
+      <ObjectId>24636</ObjectId>
+      <StateNumber>691</StateNumber>
+    </table>
+    <table id="41" parent="15" name="auth_user_user_permissions">
+      <ObjectId>24644</ObjectId>
+      <StateNumber>691</StateNumber>
+    </table>
+    <table id="42" parent="15" name="blog_blog">
+      <ObjectId>24744</ObjectId>
+      <StateNumber>732</StateNumber>
+    </table>
+    <table id="43" parent="15" name="blog_post">
+      <ObjectId>24758</ObjectId>
+      <StateNumber>754</StateNumber>
+    </table>
+    <table id="44" parent="15" name="blog_profile">
+      <ObjectId>24779</ObjectId>
+      <StateNumber>756</StateNumber>
+    </table>
+    <table id="45" parent="15" name="blog_profile_is_read_post">
+      <ObjectId>24789</ObjectId>
+      <StateNumber>756</StateNumber>
+    </table>
+    <table id="46" parent="15" name="blog_profile_subscription_blog">
+      <ObjectId>24797</ObjectId>
+      <StateNumber>761</StateNumber>
+    </table>
+    <table id="47" parent="15" name="django_admin_log">
+      <ObjectId>24704</ObjectId>
+      <StateNumber>693</StateNumber>
+    </table>
+    <table id="48" parent="15" name="django_content_type">
+      <ObjectId>24590</ObjectId>
+      <StateNumber>691</StateNumber>
+    </table>
+    <table id="49" parent="15" name="django_migrations">
+      <ObjectId>24579</ObjectId>
+      <StateNumber>688</StateNumber>
+    </table>
+    <table id="50" parent="15" name="django_session">
+      <ObjectId>24732</ObjectId>
+      <StateNumber>712</StateNumber>
+    </table>
+    <table id="51" parent="15" name="django_site">
+      <ObjectId>24848</ObjectId>
+      <StateNumber>1284</StateNumber>
+    </table>
+  </database-model>
+</dataSource>

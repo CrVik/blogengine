@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Новая публикация - {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Сохранить пост</button>
+    </form>
+{% endblock %}

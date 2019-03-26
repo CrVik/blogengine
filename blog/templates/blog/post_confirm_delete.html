@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Удаление публикации - {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+    <form action="." method="POST">
+        {% csrf_token %}
+       <p class="mt-5"> Вы действительно хотите удалить пост: " {{ object }} "? </p>
+       <button type="submit" class="btn btn-danger">Удалить пост</button>
+    </form>
+{% endblock %}

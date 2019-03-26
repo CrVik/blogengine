@@ -1,0 +1,14 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+    {{ post.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5">
+        {{ post.title }}
+    </h1>
+    <p> {{ post.body }}
+    <br>
+    <a href="{% url 'posts_list_url' %}" class="btn btn-primary mt-3">Назад</a>
+{% endblock %}

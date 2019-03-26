@@ -1,0 +1,36 @@
+{% extends 'Base.html' %}
+{% load custom_tags %}
+
+{% block title %}
+    My blog
+{% endblock %}
+
+{% block content %}
+    <h1>Интересные посты </h1>
+
+    {% for post in post_list %}
+        {#  {% include 'blog/includes/post_card_template.html' %}#}
+        <div class="card mb-3">
+            <div class="card-header"> {{ post.date_pub }}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.body|truncatewords:15 }}</p>
+            </div>
+            <div class="card-footer text-muted">
+                <a href="{{ post.get_absolute_url }}" class="btn btn-light">Open..</a>
+
+                {% is_read_post post.id user as is_read %}
+                {% if is_read %}
+                    <a href="{% url 'read_post_url' post.pk %}" class="btn btn-secondary">Mark as unread..</a>
+                {% else %}
+                    <a href="{% url 'read_post_url' post.pk %}" class="btn btn-light">Mark as read..</a>
+                {% endif %}
+
+                <p>Автор: {{ post.blog.user }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+
+
+{% endblock %}
