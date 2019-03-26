@@ -50,12 +50,6 @@ class BlogListView(ListView):
     def get_queryset(self):
         return Blog.objects.exclude(user=self.request.user)
 
-    # def get_context_data(self, *, object_list=None, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     # Add in a QuerySet of all the books
-    #     # context['book_list'] = Book.objects.all()
-    #     return context
-
 
 class NewsListView(ListView):
     model = Post
